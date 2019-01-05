@@ -1,0 +1,21 @@
+<!--pages/mine/manage/check/check.wxml-->
+<view class="container">
+  <!-- 渲染短文本 -->
+   <view wx:for="{{shortTexts}}">
+    <view class="section__title">{{item.title}} </view>
+    <view>{{item.demo}}</view>
+  </view> 
+  <!-- 渲染选项 -->
+  <view wx:for="{{options}}">
+    <view class="section__title">{{item.title}} </view>
+    <radio-group>
+            <label wx:for="{{item.optionArray}}" wx:for-item="optionItem"><radio value="{{optionItem}}"/>{{optionItem}}</label>
+    </radio-group>
+  </view>
+<!-- 渲染长文本 -->
+ <view wx:for="{{longTexts}}">
+    <view class="section__title">{{item.title}} </view>
+    <view>{{item.demo}}</view>
+ </view> 
+  <navigator url='../update/update'>修改</navigator>
+</view>

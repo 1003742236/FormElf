@@ -1,0 +1,11 @@
+<!--pages/mine/task/task.wxml-->
+<view class="container">
+    <navigator url='./create/create'>新建任务</navigator>
+    <view wx:for="{{taskLists}}" class="task-list">
+            <navigator url='./check'>{{item.name}}</navigator>
+            <navigator url='./update/update'>修改</navigator>
+            <navigator url='./publish/publish'>发布</navigator>
+            <view>任务最后修改时间:</view>
+            <button bindtap='del' id='{{item.id}}'>删除</button>
+    </view>
+</view>

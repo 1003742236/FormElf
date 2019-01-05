@@ -1,0 +1,50 @@
+<!--pages/mine/manage/create/creat.wxml-->
+<view class="container">
+<view class="section">
+  <picker bindchange="bindPickerChange" value="{{index}}" range="{{examples}}" range-key="name">
+    <view class="picker">当前所选择样本：{{examples[index].name}}</view>
+  </picker>
+</view>
+<form bindsubmit="formSubmit">
+    <view>注意：请确保上传的样本与下面填写的数据样本一致且在表格中唯一</view>
+    <view>
+      <view>---------短文本数据-----------</view>
+      <view wx:for='{{shortTexts}}' wx:key=''>
+            <view>-----</view>
+            <view>请输入该数据的名称</view>
+            <input data-lists='{{shortTexts}}' data-type='shortTexts' data-key='title' name='{{item.id}}Title' value='{{item.title}}' bindinput='monitor' id='{{item.id}}'></input>
+            <view>请输入该数据的样本</view>
+            <input data-lists='{{shortTexts}}' data-type='shortTexts' data-key='demo' name='{{item.id}}Demo' value='{{item.demo}}' bindinput='monitor' id='{{item.id}}'></input>
+            <button data-lists='{{shortTexts}}' data-type='shortTexts' bindtap='del' id='{{item.id}}'>删除此条</button>
+      </view>
+      <button data-lists='{{shortTexts}}' class='add-li' bindtap='add' id='shortTexts'>添加数据</button>
+    </view>
+    <view>
+      <view>---------长文本数据-----------</view>
+      <view wx:for="{{longTexts}}" bindtap='del'>
+          <view>-----</view>
+          <view>请输入该数据的名称</view>
+          <input name='{{item.id}}Title' value='{{item.title}}' data-type='longTexts' data-lists='{{longTexts}}' data-key='title' bindinput='monitor' id='{{item.id}}'></input>
+          <view>请输入该数据的样本</view>
+          <input name='{{item.id}}Demo' value='{{item.demo}}' data-type='longTexts' data-lists='{{longTexts}}' data-key='demo' bindinput='monitor' id='{{item.id}}'></input>
+          <button data-lists='{{longTexts}}' data-type='longTexts' bindtap='del' id="{{item.id}}">删除此条</button>
+      </view>
+      <button data-lists='{{longTexts}}' class='add-li' bindtap='add' id='longTexts'>添加数据</button>
+    </view>
+    <view>
+      <view>----------选项数据----------</view>
+      <view wx:for="{{options}}" bindtap='del'>
+        <view>-----</view>
+        <view>请输入该数据的名称</view>
+        <input name='{{item.id}}Title' value='{{item.title}}' data-lists='{{options}}' data-type='options' data-key='title' bindinput='monitor' id='{{item.id}}'></input>
+        <view>请输入该数据的样本</view>
+        <input name='{{item.id}}OptionArray' value='{{item.optionArray}}' data-type='options' data-lists='{{options}}' data-type='demo' data-key='title' bindinput='monitor' id='{{item.id}}'></input>
+        <button data-lists='{{options}}' data-type='options' bindtap='del' id='{{item.id}}'>删除此条</button>
+      </view>
+      <button data-lists='{{longTexts}}' class='add-li' bindtap='add' id='options'>添加数据</button>
+    </view>
+    <button formType='submit'>生成模版</button>
+</form>
+    
+
+</view>

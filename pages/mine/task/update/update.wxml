@@ -1,0 +1,27 @@
+<!--pages/mine/task/update/update.wxml-->
+<view class="section">
+  <picker bindchange="bindPickerChange" value="{{index}}" range="{{templates}}" range-key="name">
+    <view class="picker">当前所选择模版：{{templates[index].name}}</view>
+  </picker>
+  <form>
+    <view>任务名称</view>
+    <input name='taskName'></input>
+    <view>任务简介(选填)</view>
+    <input name='taskIntro'></input>
+    <view>任务名单(选填)</view>
+    <input name='taskNameList'></input>
+    
+  </form>
+  <view class="section">
+      <view class="section__title">截止日期</view>
+  <picker
+    mode="date"
+    value="{{date}}"
+    start="2015-09-01"
+    end="2017-09-01"
+    bindchange="bindDateChange"
+  >
+    <view class="picker">当前选择: {{date}}</view>
+  </picker>
+</view>
+</view>

@@ -1,0 +1,12 @@
+<!--pages/mine/manage/manage.wxml-->
+
+<view class="container">
+    <navigator url='./create/create'>新建模版</navigator>
+    <view wx:for="{{myTemplateLists}}" class="template-list">
+            <navigator url='./check/check'>{{item.title}}</navigator>
+            <navigator url='./update/update'>修改</navigator>
+            <button bindtap='del' id='{{item.id}}'>删除</button>
+    </view>
+
+
+</view>

@@ -1,0 +1,54 @@
+<view class='coupon-wrap' wx:if="{{showCoupon}}">
+  <view class='coupon-row' wx:for="{{allOrder}}" wx:key="item">
+    <view class='coupon'>
+      <view class='date'>{{item.updateAt}} 过期</view>
+      <view class='price'>
+        ￥
+        <text>{{ item.price }}</text>
+      </view>
+      <view class='des'>
+        满
+        <text class='maxprice'>{{item.nprice}}</text>元可用
+      </view>
+    </view>
+    <view class='coupon-get' bindtap='setCoupon' data-id="{{ item.objectId }}" data-price="{{item.price}}">立即使用</view>
+
+  </view>
+</view>
+<view class="container">
+  <form bindsubmit="placeOrder">
+
+    <view class="zan-panel" style="margin-top:10px">
+      <view class="zan-cell" wx:for="{{detail}}">
+        <image src="{{item.pic}}" style="height:60px;width:60px;margin-right:10px" />
+        <view class="zan-cell__bd">
+          <view class="goods-title">{{item.name}}</view>
+        </view>
+        <view class="zan-cell__ft" style="color:red">￥{{item.price}} </view>
+      </view>
+      <view class="zan-cell">
+      </view>
+      <view class="zan-cell">
+        <view class="zan-cell__bd">
+          合计
+        </view>
+        <view class="zan-cell__ft" style="color:red">
+          ￥{{goodMoney}}
+        </view>
+      </view>
+    </view>
+
+    <!--下单-->
+    <view class="Bill-layer" wx:if="{{showCart&&sumNum>0}}" bindtap="hiddenLayer"></view>
+    <view class="Bill">
+      <view class="takeBill {{showCart?'':'bdt'}}">
+        <view class="box-cart">合计：
+          <text style="color:red">￥{{totalMoney-price}}</text>
+        </view>
+        <button class="box-right" formType="submit">
+          提交订单
+        </button>
+      </view>
+    </view>
+  </form>
+</view>
