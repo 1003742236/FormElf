@@ -16,7 +16,15 @@ function newjson(type,count){
   }
   return newData;
 }
+function getbyid(id,lists){
+  for (var i = 0, len = lists.length; i < len; i++) {
+    if (lists[i].id == id) {
+      return lists[i];
+    }
+  }
+}
 module.exports  = {
   del:del,
-  newjson:newjson
+  newjson:newjson,
+  getbyid:getbyid
 }

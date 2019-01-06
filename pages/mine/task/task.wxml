@@ -4,8 +4,8 @@
     <view wx:for="{{taskLists}}" class="task-list">
             <navigator url='./check/check'>{{item.name}}</navigator>
             <navigator url='./update/update'>修改</navigator>
-            <navigator url='./publish/publish'>发布</navigator>
             <view>任务最后修改时间:</view>
+            <button id='{{item.id}}' open-type="share">发布</button>
             <button bindtap='del' id='{{item.id}}'>删除</button>
     </view>
 </view>

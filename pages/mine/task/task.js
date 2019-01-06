@@ -20,4 +20,23 @@ Page({
       taskLists: lists
     })
   },
+  onShareAppMessage: function (ops) {
+    if(ops.target==null){
+        wx.showModal({
+          title: '提示',
+          content: '请选择要发布的任务',
+        })
+      }
+    else{
+      var task = jsonhandle.getbyid(ops.target.id,this.data.taskLists);
+      return {
+        title: task.name,
+        desc: task.intro,
+        path: '/pages/mine/manage/fill?id='+task.templateId,
+        imageUrl:'http://hbimg.b0.upaiyun.com/e503f148c1f7267c5834d48a522125a8525ad24140f07-lDpKXX_fw658'
+      }
+    }
+    
+  }
+  
 })

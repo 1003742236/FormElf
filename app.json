@@ -19,7 +19,8 @@
     "pages/mine/task/publish/publish",
     "pages/mine/task/create/create",
     "pages/mine/example/example",
-    "pages/mine/task/check/check"
+    "pages/mine/task/check/check",
+    "pages/mine/manage/fill/fill"
   ],
   "window": {
     "navigationBarBackgroundColor": "#FAFAFA",
