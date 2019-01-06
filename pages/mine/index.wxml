@@ -73,7 +73,7 @@
   </view>
 
   <view class="zan-panel" style="border-top:0px;border-bottom:0px;">
-    <view class="zan-cell zan-cell--access" bindtap="manage">
+    <view class="zan-cell zan-cell--access" bindtap="example">
       <view class="zan-cell__bd">样本列表</view>
       <view class="zan-cell__ft smallsize" bindtap="more"></view>
     </view>

@@ -35,6 +35,11 @@ Page({
   onUnload: function () {
     // 页面关闭
   },
+  example: function () {
+    wx.navigateTo({
+      url: './example/example'
+    })
+  },
 
   manage: function () {
     wx.navigateTo({

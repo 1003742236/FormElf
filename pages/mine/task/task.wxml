@@ -2,7 +2,7 @@
 <view class="container">
     <navigator url='./create/create'>新建任务</navigator>
     <view wx:for="{{taskLists}}" class="task-list">
-            <navigator url='./check'>{{item.name}}</navigator>
+            <navigator url='./check/check'>{{item.name}}</navigator>
             <navigator url='./update/update'>修改</navigator>
             <navigator url='./publish/publish'>发布</navigator>
             <view>任务最后修改时间:</view>

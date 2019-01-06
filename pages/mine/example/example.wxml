@@ -1,0 +1,6 @@
+<!--pages/mine/example/example.wxml-->
+<text>pages/mine/example/example.wxml</text>
+<view>用web-view实现</view>
+<web-view >
+
+</web-view>
